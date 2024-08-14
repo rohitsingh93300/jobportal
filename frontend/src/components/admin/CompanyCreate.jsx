@@ -16,7 +16,7 @@ const CompanyCreate = () => {
 
     const registerNewCompany = async () => {
         try {
-            const res = await axios.post('http://localhost:5000/api/v1/company/register', {companyName}, {
+            const res = await axios.post('https://jobportal-vzrk.onrender.com/api/v1/company/register', {companyName}, {
                 headers:{
                     'Content-Type':'application/json'
                 },

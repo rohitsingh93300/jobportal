@@ -15,7 +15,7 @@ import axios from 'axios';
                  console.log('called');
                  try {
                     //  axios.defaults.withCredentials = true;
-                     const res = await axios.post(`http://localhost:5000/api/v1/application/status/${id}/update`, { status },{withCredentials:true});
+                     const res = await axios.post(`https://jobportal-vzrk.onrender.com/api/v1/application/status/${id}/update`, { status },{withCredentials:true});
                      console.log(res);
                      if (res.data.success) {
                          toast.success(res.data.message);

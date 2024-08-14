@@ -20,7 +20,7 @@ const JobDescription = () => {
 
     const applyJobHandler = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/v1/application/apply/${jobId}`, { withCredentials: true })
+            const res = await axios.get(`https://jobportal-vzrk.onrender.com/api/v1/application/apply/${jobId}`, { withCredentials: true })
             if (res.data.success) {
                 setIsApplied(true)  //update the local state
                 const updatedSingleJob = {...singleJob, applications: [...singleJob.applications, { applicant: user?._id }] }
@@ -37,7 +37,7 @@ const JobDescription = () => {
     useEffect(() => {
         const fetchSingleJob = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/v1/job/get/${jobId}`, { withCredentials: true })
+                const res = await axios.get(`https://jobportal-vzrk.onrender.com/api/v1/job/get/${jobId}`, { withCredentials: true })
                 if (res.data.success) {
                     dispatch(setSingleJob(res.data.job))
                     setIsApplied(res.data.job.applications.some(application => application.applicant === user?._id));  //Ensure the state is in sync with fetched data

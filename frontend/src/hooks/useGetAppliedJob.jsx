@@ -10,7 +10,7 @@ const useGetAppliedJobs = () => {
     useEffect(()=>{
         const fetchAppliedJobs = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/v1/application/get`, {withCredentials:true});
+                const res = await axios.get(`https://jobportal-vzrk.onrender.com/api/v1/application/get`, {withCredentials:true});
                 console.log(res.data);
                 if(res.data.success){
                     dispatch(setAllAppliedJobs(res.data.application));
