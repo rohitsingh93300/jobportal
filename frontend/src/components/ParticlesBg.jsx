@@ -51,7 +51,7 @@ const ParticlesBg = (props) => {
         },
         modes: {
           push: {
-            distance: 200,
+            distance: 100,
             duration: 15,
           },
           grab: {
@@ -68,7 +68,7 @@ const ParticlesBg = (props) => {
           distance: 150,
           enable: true,
           opacity: 0.3,
-          width: 1,
+          width: 1.5,
         },
         move: {
           direction: "none",
@@ -93,7 +93,7 @@ const ParticlesBg = (props) => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: 4 },
         },
       },
       detectRetina: true,
