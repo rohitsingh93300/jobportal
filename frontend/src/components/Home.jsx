@@ -18,11 +18,14 @@ const Home = () => {
     }
   }, []);
   return (
-    <div>
+    <div className=''>
       <Navbar />
       <HeroSection />
       <CategoryCarousel />
+      
+
       <LatestJobs />
+      
       <Footer/> 
     </div>
   )
