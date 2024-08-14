@@ -28,7 +28,7 @@ import axios from 'axios';
      return (
         <div>
             <Table>
-                <TableCaption>A list of your recent applied user</TableCaption>
+                <TableCaption className="mb-5">A list of your recent applied user</TableCaption>
                 <TableHeader>
                     <TableRow>
                         <TableHead>FullName</TableHead>
