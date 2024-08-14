@@ -25,8 +25,8 @@ const HeroSection = () => {
         <div className='text-center px-4 md:px-0 z-10'>
             <div className='flex flex-col gap-5 my-10'>
                 <span className='mx-auto px-4 py-2 rounded-full bg-gray-100 text-[#F83002] font-medium'>No. 1 Job Hunt Website</span>
-                <h1 className='text-4xl md:text-5xl font-bold'>Search, Apply & <br /> Get Your <span className='text-[#6A38C2]'>Dream Jobs</span></h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident sapiente libero nostrum praesentium?</p>
+                <h1 className='text-4xl md:text-5xl font-bold bg-white'>Search, Apply & <br /> Get Your <span className='text-[#6A38C2]'>Dream Jobs</span></h1>
+                <p className='bg-white'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel provident sapiente libero nostrum praesentium?</p>
                 <div className='flex w-[70%] md:w-[40%] shadow-lg bg-white border border-gray-20 pl-3 rounded-full items-center gap-4 mx-auto'>
                     <input
                         type="text"
