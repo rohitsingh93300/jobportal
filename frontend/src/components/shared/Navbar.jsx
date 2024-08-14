@@ -52,8 +52,8 @@ const Navbar = () => {
             {/* computer nav */}
             <div className='bg-white hidden md:block'>
                 <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
-                    <div>
-                        <h1 className='text-2xl font-bold'>Job<span className='text-[#F83002]'>Portal</span></h1>
+                    <div onClick={()=>navigate('/')} className='cursor-pointer'>
+                        <h1 className='text-2xl font-bold'>Job<span className='text-[#3346ff]'>Portal</span></h1>
                     </div>
 
                     <div className='flex items-center gap-12 '>
@@ -123,7 +123,7 @@ const Navbar = () => {
             <div className='bg-white md:hidden block '>
                 <div className='flex items-center justify-between mx-auto max-w-7xl h-12 '>
                     <div>
-                        <h1 className='text-xl font-bold'>Job<span className='text-[#F83002]'>Portal</span></h1>
+                        <h1 onClick={()=>navigate('/')} className='text-xl font-bold'>Job<span className='text-[#F83002]'>Portal</span></h1>
                     </div>
                     <div className='flex gap-2'>
                     {
