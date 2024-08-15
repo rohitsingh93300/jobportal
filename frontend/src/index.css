@@ -73,3 +73,7 @@
     width: 100%;
     position: absolute;
 }
+.required::after {
+  content: "*";
+  color: red;
+}

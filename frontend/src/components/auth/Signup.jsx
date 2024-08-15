@@ -10,6 +10,7 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoading } from '@/redux/authSlice'
 import { Loader2 } from 'lucide-react'
+import Footer from '../shared/Footer'
 
 const Signup = () => {
 
@@ -56,6 +57,7 @@ const Signup = () => {
             }
         } catch (error) {
             console.log(error);
+            toast.error(error.response.data.message)
         } finally {
             dispatch(setLoading(false));
         }
@@ -67,7 +69,7 @@ const Signup = () => {
                 <form onSubmit={submitHandler} className='md:w-1/2 border border-gray-200 rounded-md p-4 my-10'>
                     <h1 className='font-bold text-xl mb-5'>Sign up</h1>
                     <div className='my-2'>
-                        <Label>Full Name</Label>
+                        <Label className="required">Full Name</Label>
                         <Input type="text"
                             value={input.fullname}
                             name="fullname"
@@ -76,7 +78,7 @@ const Signup = () => {
                         />
                     </div>
                     <div className='my-2'>
-                        <Label>Email</Label>
+                        <Label className="required">Email</Label>
                         <Input
                             type="email"
                             value={input.email}
@@ -85,7 +87,7 @@ const Signup = () => {
                             placeholder="Email" />
                     </div>
                     <div className='my-2'>
-                        <Label>Phone Number</Label>
+                        <Label className="required">Phone Number</Label>
                         <Input
                             type="number"
                             value={input.phoneNumber}
@@ -94,7 +96,7 @@ const Signup = () => {
                             placeholder="Phone Number" />
                     </div>
                     <div className='my-2'>
-                        <Label>Password</Label>
+                        <Label className="required">Password</Label>
                         <Input
                             type="password"
                             value={input.password}
@@ -130,7 +132,7 @@ const Signup = () => {
                             </div>
                         </RadioGroup>
                         <div className='flex items-center gap-2 '>
-                            <Label>Profile</Label>
+                            <Label className="required">Profile</Label>
                             <Input
                                 accept="image/*"
                                 type="file"
@@ -141,11 +143,12 @@ const Signup = () => {
                     </div>
                     {
                         loading ? <Button className="w-full my-4"><Loader2 className='mr-2 h-4 w-4 animate-spin' />Please wait</Button> :
-                            <Button type="submit" className="w-full my-4">SignUp</Button>
+                            <Button type="submit" disabled={!(input.file && input.role && input.fullname && input.email && input.phoneNumber && input.password)} className="w-full my-4">SignUp</Button>
                     }
                     <span className='text-sm'>Already have an account? <Link to="/login" className="text-blue-600">Login</Link></span>
                 </form>
             </div>
+            <Footer/>
         </div>
     )
 }

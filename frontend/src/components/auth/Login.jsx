@@ -10,6 +10,7 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoading, setUser } from '@/redux/authSlice'
 import { Loader2 } from 'lucide-react'
+import Footer from '../shared/Footer'
 
 const Login = () => {
 
@@ -50,12 +51,12 @@ const Login = () => {
     return (
         <div >
             <Navbar />
-            <div className='flex items-center justify-center max-w-7xl mx-auto px-4 md:px-0'>
-                <form onSubmit={submitHandler} className='md:w-1/2 border border-gray-200 rounded-md p-4 my-10'>
+            <div className='flex items-center justify-center max-w-xl md:max-w-7xl px-4 md:px-0'>
+                <form onSubmit={submitHandler} className='w-full md:w-1/2 border border-gray-200 rounded-md p-4 my-10'>
                     <h1 className='font-bold text-xl mb-5'>Login</h1>
 
                     <div className='my-2'>
-                        <Label>Email</Label>
+                        <Label className="required">Email</Label>
                         <Input
                             type="email"
                             name="email"
@@ -65,7 +66,7 @@ const Login = () => {
                     </div>
 
                     <div className='my-2'>
-                        <Label>Password</Label>
+                        <Label className="required">Password</Label>
                         <Input
                             type="password"
                             name="password"
@@ -107,6 +108,7 @@ const Login = () => {
                     <span className='text-sm'>Don't have an account? <Link to="/signup" className="text-blue-600">Signup</Link></span>
                 </form>
             </div>
+            <Footer/>
         </div>
     )
 }
